@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="Utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        word-wrap: break-word;
+        word-break: break-all;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --body-bg: #e7e9eb;
+        --cont-bg: #2196f3;
+        --ele-bg: rgba(255, 255, 255, 0.8);
+      }
+
+      body {
+        font-size: 16px;
+        font-family: Roboto, sans-serif, Geneva, Tahoma;
+        background-color: var(--body-bg);
+      }
+
+      header,
+      nav,
+      article,
+      section,
+      aside,
+      footer {
+        overflow: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: auto;
+        margin: 1px;
+        background-color: var(--ele-bg);
+      }
+      nav .box {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+      nav .box a {
+        height: 100%;
+        text-decoration: none;
+      }
+      nav .box a:hover {
+        color: white;
+        /* background-color: cornflowerblue; */
+      }
+      header {
+        grid-area: header;
+      }
+
+      nav {
+        grid-area: nav;
+      }
+
+      section {
+        grid-area: section;
+      }
+
+      article {
+        grid-area: article;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .container {
+          width: 100%;
+          height: 100vh;
+          display: grid;
+          overflow: auto;
+          background-color: var(--cont-bg);
+          grid-template-areas:
+            "header header header header"
+            "nav nav nav nav"
+            "section section section section "
+            "article article article article"
+            "aside aside aside aside"
+            "footer footer footer footer";
+          grid-template-rows: 10% 10% 10% 50% 10%;
+          grid-template-columns: 10% 40% 40% 10%;
+        }
+      }
+
+      @media only screen and (min-width: 700px) {
+        .container {
+          width: 100%;
+          height: 100vh;
+          display: grid;
+          overflow-y: auto;
+          background-color: var(--cont-bg);
+          grid-template-areas:
+            "header header header header"
+            "nav nav nav nav"
+            "section section section aside "
+            "article article article aside"
+            "footer footer footer footer";
+          grid-template-rows: 10% 10% 10% 60% 10%;
+          grid-template-columns: 10% 40% 30% 20%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>Explore Arena</header>
+      <nav>
+        <div class="box">
+          <a href="#" target="_self">Home</a>
+          <a href="#" target="_self">About</a>
+          <a href="#" target="_self">Contact</a>
+          <a href="#" target="_self">Services</a>
+          <a href="#" target="_self">Projects</a>
+        </div>
+      </nav>
+      <section>Name of the section</section>
+      <article>Article Description</article>
+      <aside>aside content</aside>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
